@@ -612,14 +612,5 @@ function callback(list, observer) {
   observer.observe(document.body, observerOptions);
 }
 
-//implement manage & get
-//make function for converting unit
 
-//(resolved)change child's manage width collecting tag to data-h-c-managewidth so that a child can be a parent also.
-
-//observations on 7-22-22
-//(resolved)develop a system so that if parent or children name is not given alert is shown
-
-//documentation
-//1) don't try to change element's width by managing style class. as it is added after managing width, cascade script will not take care of that.
 export { homeostatic };
