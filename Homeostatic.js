@@ -13,50 +13,6 @@ function istrue(exp, func) {
 
 //....................................................................
 
-// Setting the data-display and data-width value
-
-var real = document.querySelectorAll("[data-h-parenttype='real']");
-
-for (let a = 0; a < real.length; a++) {
-  real[a].setAttribute(
-    "data-width",
-    window.getComputedStyle(real[a]).getPropertyValue("width")
-  );
-  real[a].setAttribute(
-    "data-display",
-    window.getComputedStyle(real[a]).getPropertyValue("display")
-  );
-}
-
-var foster = document.querySelectorAll("[data-h-parenttype='foster']");
-var d;
-for (d = 0; d < foster.length; d++) {
-  foster[d].setAttribute(
-    "data-width",
-    window.getComputedStyle(foster[d]).getPropertyValue("width")
-  );
-  foster[d].setAttribute(
-    "data-display",
-    window.getComputedStyle(foster[d]).getPropertyValue("display")
-  );
-}
-var s;
-
-var child = document.querySelectorAll("[data-h-childof]");
-var b;
-for (let b = 0; b < child.length; b++) {
-  child[b].setAttribute(
-    "data-width",
-    window.getComputedStyle(child[b]).getPropertyValue("width")
-  );
-  child[b].setAttribute(
-    "data-display",
-    window.getComputedStyle(child[b]).getPropertyValue("display")
-  );
-}
-
-//.....................................................................
-
 //Building homeostatic object
 var homeostatic = {
   getfosterParentNumberByName: function (name) {
@@ -113,12 +69,10 @@ homeostatic.configure = function () {
       width: window.getComputedStyle(real[a]).getPropertyValue("width"),
       isWidthFixedByInlineStyle: real[a].style.width,
       percentage: real[a].getAttribute("data-h-managewidth")?.split(",")[0],
-      unset: real[a].getAttribute("data-h-managewidth")?.split(",")[1],
       innerHTML: real[a].innerHTML,
       domElement: real[a],
       styleClass: real[a].getAttribute("data-h-managestyle"),
       contentJustification: real[a].getAttribute("data-h-justifycontent"),
-      testr: a,
       children: [],
       currentWidth: null,
       display: window.getComputedStyle(real[a]).getPropertyValue("display"),
@@ -138,7 +92,6 @@ homeostatic.configure = function () {
       isWidthFixedByInlineStyle: foster[d].style.width,
       display: window.getComputedStyle(foster[d]).getPropertyValue("display"),
       percentage: foster[d].getAttribute("data-h-managewidth")?.split(",")[0],
-      unset: foster[d].getAttribute("data-h-managewidth")?.split(",")[1],
       innerHTML: foster[d].innerHTML,
       domElement: foster[d],
       contentJustification: foster[d].getAttribute("data-h-justifycontent"),
@@ -177,7 +130,6 @@ homeostatic.configure = function () {
         child.push(childNodes[k]);
       }
     }
-    //var child = children.filter((item)=>{item.getAttribute("data-h-childof").split(",").includes(homeostatic.realParents[c].name)})
     var childdata = [];
     var b;
     for (let b = 0; b < child.length; b++) {
@@ -224,7 +176,6 @@ homeostatic.configure = function () {
     homeostatic.realParents[c].children = childdata;
   }
 };
-//homeostatic.configure();
 console.log(homeostatic);
 
 homeostatic.main = function () {
@@ -664,10 +615,10 @@ function callback(list, observer) {
 //implement manage & get
 //make function for converting unit
 
-//change child's manage width collecting tag to data-h-c-managewidth so that a child can be a parent also.
+//(resolved)change child's manage width collecting tag to data-h-c-managewidth so that a child can be a parent also.
 
 //observations on 7-22-22
-//develop a system so that if parent or children name is not given alert is shown
+//(resolved)develop a system so that if parent or children name is not given alert is shown
 
 //documentation
 //1) don't try to change element's width by managing style class. as it is added after managing width, cascade script will not take care of that.
