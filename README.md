@@ -61,7 +61,8 @@ There are 4 types of child. They are:
   ```
   <span data-h-childof="x" data-x-childtype="dead">
   ```
-- Manage : You will provide a value as percentage and that percent of the width of real parent (_** not the width of the screen**_) will be the width of the 
+- Manage : You will provide a value as percentage and that percent of the width of real parent ( _**not the width of 
+  the screen**_ ) will be the width of the 
   child.
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="60%">
