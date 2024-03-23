@@ -1,7 +1,7 @@
 
 # About The framework
 Homeostatic is a javascript framework that helps you to build you a website that can adapt to different screens, technically a flexible website. It is especially usefull to the new web 
-developers who don't want to dive deep into complex frameworks for building a flexible website and just want to get started. So,utmost effort has been taken to keep the framework simple.
+developers who don't want to dive deep into complex frameworks for building a flexible website and just want to get started. So, utmost effort has been taken to keep the framework simple.
 
 # Integrate Homeostatic To Your Project
 There are two ways to integrate Homeostatic in your project. They are:
@@ -38,6 +38,12 @@ Now set a number between 0 to 100 which homeostatic will use as percentage and t
 ```
 <div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="90%">
 ```
-You can also give homeostatic a class name which will be included in the class list of the real parent by homeostatic for any other modification you want to bring in the real parent when screen width is less than the width of the real parent.
+You can also give homeostatic a class name which will be included in the class list of the real parent for any other modification you want to bring in the real parent when screen width is less than the width of the real parent.
 ```
 <div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="90%" data-h-managestyle="newStyleClass">
+```
+It is not mandatory to provide a value as percentage and a class name , if you wish then you can omit any one or both.
+If you don't provide a value as percentage homeostatic will not handle the element when screen width is smaller than its width. 
+But *do not* keep the value of percentage blank like this:
+```
+<div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="">
