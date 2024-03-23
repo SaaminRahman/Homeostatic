@@ -30,20 +30,45 @@ Run the framework:
 # Set Up A Real Parent
  Any HTML element which act as a container of other children HTML elements can be a real parent. 
  ```
- <div data-h-parent="myrealparent" data-h-parenttype="real" >
+ <div data-h-parent="x" data-h-parenttype="real" >
  ```
-Here `myrealparent` is the name of the real parent. Make sure each real parent has a unique name.
+Here `x` is the name of the real parent. Make sure each real parent has a unique name.
 
 Now set a number between 0 to 100 which homeostatic will use as percentage and that percent of the screen width will be the width of the real parent when the screen width is less than the width of the real parent. 
 ```
-<div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="90%">
+<div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%">
 ```
 You can also give homeostatic a class name which will be included in the class list of the real parent for any other modification you want to bring in the real parent when screen width is less than the width of the real parent.
 ```
-<div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="90%" data-h-managestyle="newStyleClass">
+<div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%" data-h-managestyle="newStyleClass">
 ```
 It is not mandatory to provide a value as percentage and a class name , if you wish then you can omit any one or both.
 If you don't provide a value as percentage homeostatic will not handle the element when screen width is smaller than its width. 
-But *do not* keep the value of percentage blank like this:
+But _**do not**_ keep the value of percentage blank like this:
 ```
-<div data-h-parent="myrealparent" data-h-parenttype="real" data-h-managewidth="">
+<div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="">
+```
+If screen width becomes larger than the width of the real parent after the page is loaded (may be due to resizing window or rotating phone) , Homeostatic undoes all the changes it made.
+# Adding Children To Real Parent
+Any DOM element can be a child of one or more than one real parent (may or may not be DOM child of that real parent).
+```
+<div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%">
+  <span data-h-childof="x"></span>
+</div>
+```
+There are 4 types of child. They are:
+- Dead : These kind of children vanish when screen width is less than the width of the real parent.
+  ```
+  <span data-h-childof="x" data-x-childtype="dead">
+  ```
+- Manage : You will provide a value as percentage and that percent of width of real parent will be the width of the 
+  child.
+  ```
+  <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="60%">
+  ```
+  You can also use `inRatio` and in that case the width of the child will be adjusted with its real parent according
+  the ratio of their initial width.
+  ```
+  <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="inRatio">
+  ```
+    
