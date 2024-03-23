@@ -42,7 +42,7 @@ You can also give homeostatic a class name which will be included in the class l
 ```
 <div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%" data-h-managestyle="newStyleClass">
 ```
-It is not mandatory to provide a value as percentage and a class name , if you wish then you can omit any one or both.
+It is not mandatory to provide a value as percentage and a class name . If you wish, you can omit any one or both.
 If you don't provide a value as percentage homeostatic will not handle the element when screen width is smaller than its width. 
 But _**do not**_ keep the value of percentage blank like this:
 ```
@@ -61,7 +61,7 @@ There are 4 types of child. They are:
   ```
   <span data-h-childof="x" data-x-childtype="dead">
   ```
-- Manage : You will provide a value as percentage and that percent of width of real parent will be the width of the 
+- Manage : You will provide a value as percentage and that percent of the width of real parent (_** not the width of the screen**_) will be the width of the 
   child.
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="60%">
