@@ -100,12 +100,29 @@ There are 4 types of child. They are:
   <span data-h-childof="x" data-x-childtype="getOut,y">
   ```
   `y` is the name of the foster parent.You can also provide a percentage value and 
-  class name which will be used by Homeostatic to manage the element when it is a 
-  DOM child of a foster parent .
+  that percent of width of the foster parent will be the width of the child when 
+  the screen width is less than that of foster parent (not **real parent**) . You 
+  can add class name which will be added to its class list in that case. 
   ```
   <span data-h-childof="x" data-x-childtype="getOut,y" data-x-managewidth="60%" 
   data-x-managestyle="newStyleClass">
   ```
+An element can be child of more than one real parent, in that case you can handle that like this:
+```
+ <span data-h-childof="x,z" data-x-childtype="getOut,y" data-x-managewidth="60%" 
+  data-z-childtype="manage" data-z-managewidth="70%">
+```
+An element can also be a child and a real parent at the same time.
+# Set Up Foster Parent 
+Foster parents are elements which recieve the `getOut` type children when the screen width becomes less than the width of real parent of those children. The children are recieved as DOM children of the foster parent.
+```
+<div data-h-parent="y" data-h-parenttype="foster">
+```
+You can also provide a percentage value and that percent of screen width will be its width when the screen width is less than the width of the foster parent. You can also provide a class name.
+```
+<div data-h-parent="y" data-h-parenttype="foster" data-h-managestyle="newStyleClass" data-h-managewidth="60%">
+```
+
   
   
     
