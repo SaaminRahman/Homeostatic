@@ -8,12 +8,6 @@ There are two ways to integrate Homeostatic in your project. They are:
  2. Using CDN (Content Delivery Network):
 
 # Initialize Homeostatic
-After integating Homeostatic, import the `homeostatic` object to your javascript file:
-
-
-```
-  import { homeostatic } from "./homeostatic.js";
-```
 Configure `homeostatic` object according to your HTML:
 
 ```
@@ -48,6 +42,7 @@ But _**do not**_ keep the value of percentage blank like this:
 <div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="">
 ```
 If screen width becomes larger than the width of the real parent after the page is loaded (may be due to resizing window or rotating phone) , Homeostatic undoes all the changes it made.
+![GIF as a n example of real parent](Media/Real Parent GIF.gif width="600")
 # Adding Children To Real Parent
 Any DOM element can be a child of one or more than one real parent. The child element may or may not be DOM child of that real parent.
 ```
