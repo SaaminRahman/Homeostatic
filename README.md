@@ -50,26 +50,62 @@ But _**do not**_ keep the value of percentage blank like this:
 ```
 If screen width becomes larger than the width of the real parent after the page is loaded (may be due to resizing window or rotating phone) , Homeostatic undoes all the changes it made.
 # Adding Children To Real Parent
-Any DOM element can be a child of one or more than one real parent (may or may not be DOM child of that real parent).
+Any DOM element can be a child of one or more than one real parent. The child element may or may not be DOM child of that real parent.
 ```
 <div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%">
   <span data-h-childof="x"></span>
 </div>
 ```
 There are 4 types of child. They are:
-- Dead : These kind of children vanish when screen width is less than the width of the real parent.
+- Dead : These kind of children vanish when screen width is less than the width of 
+  the real parent.
   ```
   <span data-h-childof="x" data-x-childtype="dead">
   ```
-- Manage : You will provide a value as percentage and that percent of the width of real parent ( _**not the width of 
-  the screen**_ ) will be the width of the 
-  child.
+- Manage : You will provide a value as percentage and that percent of the width of 
+  real parent ( _**not the width of the screen**_ ) will be the width of the child
+  when the screen width is less than the width of its real parent.
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="60%">
   ```
-  You can also use `inRatio` and in that case the width of the child will be adjusted with its real parent according
-  the ratio of their initial width.
+  You can also use `inRatio` and in that case the width of the child will be
+  adjusted with its real parent accordingthe ratio of their initial width.
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="inRatio">
   ```
+  If you wish you may not provide the percentage value , but _**don't**_ leave 
+  blank.
+  You can also provide a class name which will be added to the class list of the 
+  child.
+  ```
+  <span data-h-childof="x" data-x-childtype="manage" data-x- 
+  managestyle="newStyleClass">
+  ```
+- Take Birth : These kind of children appears when the screen width is less than the 
+  width of its real parent .
+  ```
+   <span data-h-childof="x" data-x-childtype="takeBirth">
+  ```
+  If you want you can provide a percentage value.
+  ```
+   <span data-h-childof="x" data-x-childtype="takeBirth" data-x-managewidth="60%">
+  ```
+  But you can not give class name here. You have to design the element initially 
+  considering how it should look when the screen width is less than the width of 
+  its real parent.
+- Get Out : These kind of children vanishes from where it is now and then will 
+  reappear as DOM child of any element which is treated as foster parent by 
+  Homeostatic. (Details about foster parent will be given later)
+  ```
+  <span data-h-childof="x" data-x-childtype="getOut,y">
+  ```
+  `y` is the name of the foster parent.You can also provide a percentage value and 
+  class name which will be used by Homeostatic to manage the element when it is a 
+  DOM child of a foster parent .
+  ```
+  <span data-h-childof="x" data-x-childtype="getOut,y" data-x-managewidth="60%" 
+  data-x-managestyle="newStyleClass">
+  ```
+  
+  
     
