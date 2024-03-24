@@ -43,6 +43,7 @@ But _**do not**_ keep the value of percentage blank like this:
 ```
 If screen width becomes larger than the width of the real parent after the page is loaded (may be due to resizing window or rotating phone) , Homeostatic undoes all the changes it made.
 
+![Real Parent GIF](https://github.com/SaaminRahman/Homeostatic/assets/163336763/2ee8ec6f-b326-4f25-944f-0a1191ba235c)
 
 # Adding Children To Real Parent
 Any DOM element can be a child of one or more than one real parent. The child element may or may not be DOM child of that real parent.
