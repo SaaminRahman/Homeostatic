@@ -104,6 +104,7 @@ There are 4 types of child. They are:
   data-x-managestyle="newStyleClass">
   ```
 ![Untitled video - Made with Clipchamp (1)](https://github.com/SaaminRahman/Homeostatic/assets/163336763/325e891f-8705-4a76-a920-08e59e91a5c6)
+
 An element can be child of more than one real parent, in that case you can handle that like this:
 ```
  <span data-h-childof="x,z" data-x-childtype="getOut,y" data-x-managewidth="60%" 
