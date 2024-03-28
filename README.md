@@ -4,23 +4,22 @@ Homeostatic is a javascript framework that helps you to build you a website that
 
 # Integrate Homeostatic To Your Project
 There are two ways to integrate Homeostatic in your project. They are:
- 1. Using NPM (Node Package Manager):
- 2. Using CDN (Content Delivery Network):
-
-# Initialize Homeostatic
-
-Configure `homeostatic` object according to your HTML:
-
-```
-  homeostatic.configure();
-```
-Run the framework:
-
-```
-  homeostatic.run();
-```
- (Just paste the code to your javascript file if you do not understand anything)
-
+ 1. Using NPM (Node Package Manager): Install the package from terminal:
+    ```
+    npm install homeostatic
+    ```
+    A file named Homeostatic.js will be downloaded. Link this to your HTML file:
+    ```
+    <head>
+      <script src="./homeostatic.js" defer>
+    </head>
+    ``` 
+ 2. Using CDN (Content Delivery Network): This is easier for new web developers. Add this to your HTML file:
+    ```
+    <head>
+      <script src="https://cdn.jsdelivr.net/npm/homeostatic@1.0.0/homeostatic.js" defer>
+    </head>
+    ```
 # Set Up A Real Parent
  Any HTML element which act as a container of other children HTML elements can be a real parent. 
  ```
