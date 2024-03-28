@@ -427,6 +427,7 @@ homeostatic.main = function () {
   observer.observe(document.body, observerOptions);
 };
 homeostatic.run = function () {
+  homeostatic.checkValidity();
   setTimeout(homeostatic.main, 3);
   window.addEventListener("resize", homeostatic.main);
   observer.observe(document.body, observerOptions);
