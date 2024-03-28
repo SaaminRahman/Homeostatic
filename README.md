@@ -37,16 +37,13 @@ You can also give homeostatic a class name which will be included in the class l
 ```
 It is not mandatory to provide a value as percentage and a class name . If you wish, you can omit any one or both.
 If you don't provide a value as percentage homeostatic will not handle the element when screen width is smaller than its width. 
-But _**do not**_ keep the value of percentage blank like this:
-```
-<div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="">
-```
 If screen width becomes larger than the width of the real parent after the page is loaded (may be due to resizing window or rotating phone) , Homeostatic undoes all the changes it made.
 
 ![Real Parent GIF](https://github.com/SaaminRahman/Homeostatic/assets/163336763/2ee8ec6f-b326-4f25-944f-0a1191ba235c)
 
 # Adding Children To Real Parent
 Any DOM element can be a child of one or more than one real parent. The child element may or may not be DOM child of that real parent.
+
 ```
 <div data-h-parent="x" data-h-parenttype="real" data-h-managewidth="60%">
   <span data-h-childof="x"></span>
@@ -55,17 +52,20 @@ Any DOM element can be a child of one or more than one real parent. The child el
 There are 4 types of child. They are:
 - Dead : These kind of children vanish when screen width is less than the width of 
   the real parent.
+  
   ```
   <span data-h-childof="x" data-x-childtype="dead">
   ```
 - Manage : You will provide a value as percentage and that percent of the width of 
   real parent ( _**not the width of the screen**_ ) will be the width of the child
   when the screen width is less than the width of its real parent.
+  
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="60%">
   ```
   You can also use `inRatio` and in that case the width of the child will be
   adjusted with its real parent accordingthe ratio of their initial width.
+  
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-x-managewidth="inRatio">
   ```
@@ -73,16 +73,18 @@ There are 4 types of child. They are:
   blank.
   You can also provide a class name which will be added to the class list of the 
   child.
+  
   ```
-  <span data-h-childof="x" data-x-childtype="manage" data-x- 
-  managestyle="newStyleClass">
+  <span data-h-childof="x" data-x-childtype="manage" data-z-managestyle="newStyleClass">
   ```
 - Take Birth : These kind of children appears when the screen width is less than the 
   width of its real parent .
+  
   ```
    <span data-h-childof="x" data-x-childtype="takeBirth">
   ```
   If you want you can provide a percentage value.
+  
   ```
    <span data-h-childof="x" data-x-childtype="takeBirth" data-x-managewidth="60%">
   ```
@@ -92,13 +94,15 @@ There are 4 types of child. They are:
 - Get Out : These kind of children vanishes from where it is now and then will 
   reappear as DOM child of any element which is treated as foster parent by 
   Homeostatic. (Details about foster parent will be given later)
+  
   ```
   <span data-h-childof="x" data-x-childtype="getOut,y">
   ```
   `y` is the name of the foster parent.You can also provide a percentage value and 
   that percent of width of the foster parent will be the width of the child when 
   the screen width is less than that of foster parent (not **real parent**) . You 
-  can add class name which will be added to its class list in that case. 
+  can add class name which will be added to its class list in that case.
+  
   ```
   <span data-h-childof="x" data-x-childtype="getOut,y" data-x-managewidth="60%" 
   data-x-managestyle="newStyleClass">
@@ -106,6 +110,7 @@ There are 4 types of child. They are:
 ![Untitled video - Made with Clipchamp (1)](https://github.com/SaaminRahman/Homeostatic/assets/163336763/325e891f-8705-4a76-a920-08e59e91a5c6)
 
 An element can be child of more than one real parent, in that case you can handle that like this:
+
 ```
  <span data-h-childof="x,z" data-x-childtype="getOut,y" data-x-managewidth="60%" 
   data-z-childtype="manage" data-z-managewidth="70%">
@@ -113,14 +118,48 @@ An element can be child of more than one real parent, in that case you can handl
 An element can also be a child and a real parent at the same time.
 # Set Up Foster Parent 
 Foster parents are elements which recieve the `getOut` type children when the screen width becomes less than the width of real parent of those children. The children are recieved as DOM children of the foster parent.
+
 ```
 <div data-h-parent="y" data-h-parenttype="foster">
 ```
 You can also provide a percentage value and that percent of screen width will be its width when the screen width is less than the width of the foster parent. You can also provide a class name.
+
 ```
 <div data-h-parent="y" data-h-parenttype="foster" data-h-managestyle="newStyleClass" data-h-managewidth="60%">
 ```
+# Things To Be Noted
+1. You should not keep any percentage value blank like this:
+   
+   ```
+   <span data-h-childof="x,z" data-x-childtype="getOut,y" data-x-managewidth="" 
+   data-z-childtype="manage" data-z-managewidth=" ">
+   ```
+   If do not want to manage width , then just don't mention anything.
+2. When you want to modify any parent or child by providing a class name to Homeostatic , unless your CSS declaration for that class has higher specificity than the existing CSS 
+   declaration. For example consider the following scenario:
+   
+   **HTML**:
+   
+   ```
+   <span data-h-childof="x" data-x-childtype="manage" data-z-managestyle="newStyleClass" style="border:2px solid red;">
+   ```
+   **CSS**:
+   ```
+   .newStyleClass{
+   border : 2px solid green;
+   }
+   ```
+   Here you will not find your desired change because the inline style declaration has a higher specificity than the declarations in a class. You can solve the issue in this way:
 
+   ```
+   .newStyleClass{
+   border : 2px solid green !important;
+   }
+   ```
+   You can learn more about specificity from [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) or [web.dev](https://web.dev/learn/css/specificity).
+4. Do not try to change width of any parent or child through the class whose name you provide for other modifications. As the class is added by Homeostatic after managing width , 
+   Homeostatic will not be able to take care of that.
   
+
   
     
