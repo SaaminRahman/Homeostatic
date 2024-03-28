@@ -8,6 +8,11 @@ There are two ways to integrate Homeostatic in your project. They are:
  2. Using CDN (Content Delivery Network):
 
 # Initialize Homeostatic
+Import the Homeostatic object :
+
+```
+  import homeostatic from "./homeostatic.js"
+```
 Configure `homeostatic` object according to your HTML:
 
 ```
