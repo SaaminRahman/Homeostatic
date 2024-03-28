@@ -136,7 +136,7 @@ You can also provide a percentage value and that percent of screen width will be
    ```
    If do not want to manage width , then just don't mention anything.
 2. When you want to modify any parent or child by providing a class name to Homeostatic , unless your CSS declaration for that class has higher specificity than the existing CSS 
-   declaration. For example consider the following scenario:
+   declaration the modifications will not come into existance. For example consider the following scenario:
    
    **HTML**:
    
@@ -159,7 +159,7 @@ You can also provide a percentage value and that percent of screen width will be
    You can learn more about specificity from [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) or [web.dev](https://web.dev/learn/css/specificity).
 4. Do not try to change width of any parent or child through the class whose name you provide for other modifications. As the class is added by Homeostatic after managing width , 
    Homeostatic will not be able to take care of that.
-5. If you find anything wrong please check the console and it may solve your problem . Homeostatic logs the mistakes you make while using the framework in detais.
+5. If you find anything wrong please check the console and it may solve your problem . Homeostatic logs the mistakes you make while using the framework in details.
    ![Screenshot 2024-03-28 094058](https://github.com/SaaminRahman/Homeostatic/assets/163336763/c9e6d7e2-03dc-408d-82df-e8df481bce69)
 
   
