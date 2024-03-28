@@ -8,11 +8,7 @@ There are two ways to integrate Homeostatic in your project. They are:
  2. Using CDN (Content Delivery Network):
 
 # Initialize Homeostatic
-Import the Homeostatic object :
 
-```
-  import homeostatic from "./homeostatic.js"
-```
 Configure `homeostatic` object according to your HTML:
 
 ```
@@ -23,7 +19,7 @@ Run the framework:
 ```
   homeostatic.run();
 ```
- (Just paste the code to your javascript file if you do not understand anything, details will be given later)
+ (Just paste the code to your javascript file if you do not understand anything)
 
 # Set Up A Real Parent
  Any HTML element which act as a container of other children HTML elements can be a real parent. 
