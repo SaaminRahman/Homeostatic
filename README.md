@@ -1,6 +1,6 @@
 
 # About The framework
-Homeostatic is a javascript framework that helps you to build you a website that can adapt to different screens, technically a flexible website. It is especially useful to the new web developers who don't want to dive deep into complex frameworks for building a flexible website and just want to get started. So, utmost effort has been taken to keep the framework simple.
+Homeostatic is a javascript framework that helps you to build you a website that can adapt to different screens, technically a responsive website. It is especially useful to the new web developers who don't want to dive deep into complex frameworks for building a responsive website and just want to get started. So, utmost effort has been taken to keep the framework simple.
 
 # Integrate Homeostatic To Your Project
 There are two ways to integrate Homeostatic in your project. They are:
