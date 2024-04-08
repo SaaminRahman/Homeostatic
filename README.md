@@ -1,4 +1,3 @@
-
 # About The framework
 Homeostatic is a javascript framework that helps you to build you a website that can adapt to different screens, technically a responsive website. It is especially useful to the new web developers who don't want to dive deep into complex frameworks for building a responsive website and just want to get started. So, utmost effort has been taken to keep the framework simple.
 
@@ -14,12 +13,13 @@ There are two ways to integrate Homeostatic in your project. They are:
       <script src="./homeostatic.js" defer>
     </head>
     ``` 
- 2. Using CDN (Content Delivery Network): This is easier for new web developers. Add this to your HTML file:
+ 2. Using CDN (Content Delivery Network): This is easier for new web developers. Add this to your HTML file (Use a version number in the place of `version` after `homeostatic@` part in the source url of script):
     ```
     <head>
-      <script src="https://cdn.jsdelivr.net/npm/homeostatic@1.0.0/homeostatic.js" defer>
+      <script src="https://cdn.jsdelivr.net/npm/homeostatic@version/homeostatic.js" defer>
     </head>
     ```
+  You can use any version number available after `homeostatic@` part in the url. Please check for the available version numbers in the versions section of these page and use the latest one.
 # Set Up A Real Parent
  Any HTML element which act as a container of other children HTML elements can be a real parent. 
  ```
@@ -50,13 +50,13 @@ Any DOM element can be a child of one or more than one real parent. The child el
 </div>
 ```
 There are 4 types of child. They are:
-- Dead : These kind of children vanish when screen width is less than the width of 
+- **Dead** : These kind of children vanish when screen width is less than the width of 
   the real parent.
   
   ```
   <span data-h-childof="x" data-x-childtype="dead">
   ```
-- Manage : You will provide a value as percentage and that percent of the width of 
+- **Manage** : You will provide a value as percentage and that percent of the width of 
   real parent ( _**not the width of the screen**_ ) will be the width of the child
   when the screen width is less than the width of its real parent.
   
@@ -77,7 +77,7 @@ There are 4 types of child. They are:
   ```
   <span data-h-childof="x" data-x-childtype="manage" data-z-managestyle="newStyleClass">
   ```
-- Take Birth : These kind of children appears when the screen width is less than the 
+- **Take Birth** : These kind of children appears when the screen width is less than the 
   width of its real parent .
   
   ```
@@ -91,7 +91,7 @@ There are 4 types of child. They are:
   But you can not give class name here. You have to design the element initially 
   considering how it should look when the screen width is less than the width of 
   its real parent.
-- Get Out : These kind of children vanishes from where it is now and then will 
+- **Get Out** : These kind of children vanishes from where it is now and then will 
   reappear as DOM child of any element which is treated as foster parent by 
   Homeostatic. (Details about foster parent will be given later)
   
@@ -122,6 +122,7 @@ Foster parents are elements which recieve the `getOut` type children when the sc
 ```
 <div data-h-parent="y" data-h-parenttype="foster">
 ```
+`y` is the name of the step parent. Make sure every foster parent has a unique name.
 You can also provide a percentage value and that percent of screen width will be its width when the screen width is less than the width of the foster parent. You can also provide a class name.
 
 ```
@@ -161,6 +162,9 @@ You can also provide a percentage value and that percent of screen width will be
    Homeostatic will not be able to take care of that.
 5. If you find anything wrong please check the console and it may solve your problem . Homeostatic logs the mistakes you make while using the framework in details.
    ![Screenshot 2024-03-28 094058](https://github.com/SaaminRahman/Homeostatic/assets/163336763/c9e6d7e2-03dc-408d-82df-e8df481bce69)
+
+# Reporting Issues
+If you find any bug or have a feature request, please use [Github issue](https://github.com/SaaminRahman/Homeostatic/issues) to inform.
 
   
     
