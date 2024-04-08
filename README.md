@@ -19,7 +19,7 @@ There are two ways to integrate Homeostatic in your project. They are:
       <script src="https://cdn.jsdelivr.net/npm/homeostatic@version/homeostatic.js" defer>
     </head>
     ```
-  You can use any version number available after `homeostatic@` part in the url. Please check for the available version numbers in the versions section of these page and use the latest one.
+  You can use any version number available after `homeostatic@` part in the url. The available latest version is 1.0.2
 # Set Up A Real Parent
  Any HTML element which act as a container of other children HTML elements can be a real parent. 
  ```
