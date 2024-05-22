@@ -128,6 +128,9 @@ You can also provide a percentage value and that percent of screen width will be
 ```
 <div data-h-parent="y" data-h-parenttype="foster" data-h-managestyle="newStyleClass" data-h-managewidth="60%">
 ```
+# Accessing width using CSS variables
+Homeostatic creates CSS variables for all the parents (real and foster) and their children which stores their width. To get the width of a real or foster parent use the variable `--<real parent name>-width` in CSS. To get the width of a child of a real parent, use `--<real parent name>-<child number>-width`.Child number can easily derived from the sequence they are arranged in your HTML file i.e the child that appears in top most position relative to other children in your HTML file has child number 1 . Alterantively, you can get that number from homeostatic object. When a child of type `getOut` goes under custody of a foster parent, its width can also be accessed using `--<**real** parent name>-<child number>-widthWhenGotOut`
+
 # Things To Be Noted
 1. You should not keep any percentage value blank like this:
    
