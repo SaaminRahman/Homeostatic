@@ -133,7 +133,7 @@ Homeostatic creates CSS variables for all the parents (real and foster) and thei
 ```
 --x-width // x is the name of the real parent
 --x-3-width // stores the width of third child of x
---x-3-widthWhenGotOut // stores the width of the third child when it under a foster parent
+--x-3-widthWhenGotOut // stores the width of the third child when it is under custody of a foster parent
 ```
 
 # Things To Be Noted
