@@ -140,11 +140,11 @@ When javascript file of homeostatic is loaded after loading your page (Because `
 ### Properties
 #### `realParents`
 
-  Contains an array of  [realParent]().
+  Contains an array of  [`realParent`](https://github.com/SaaminRahman/Homeostatic/blob/main/README.md#realparent) interfaces.
 
 #### `fosterParents`
 
-  Contains an array of [fosterParent]().
+  Contains an array of [`fosterParent`](https://github.com/SaaminRahman/Homeostatic/blob/main/README.md#fosterParent).
 
 #### `concernedNodes` 
   An array of DOM nodes of all parents and childs.
@@ -160,7 +160,9 @@ When javascript file of homeostatic is loaded after loading your page (Because `
  |:----------|:-----|:------------|
  |`nameOfChild`| `string` | The name of the child whose real parent is being searched.|
  
- Returns the [realParent]() interface which is the real parent of the child.
+ Returns the [`realParent`](https://github.com/SaaminRahman/Homeostatic/blob/main/README.md#realparent) interface which is the 
+ real parent of the child. If no [`realParent`](https://github.com/SaaminRahman/Homeostatic/blob/main/README.md#realparent) 
+ interface has the child with the name passed as argument, then returns `null`.
 
  Example:
  ```javascript
@@ -171,7 +173,8 @@ When javascript file of homeostatic is loaded after loading your page (Because `
  |:----------|:-----|:------------|
  |`nameOfrealParent`| `string` | The name of the real parent whose number is being searched.|
 
- Returns the index of the real parent in the array stored in `homeostatic.realParents`.
+ Returns the index of the real parent in the array stored in `homeostatic.realParents`. If no real parent is found with the name 
+ passed as argument then returns `null`.
 
  Example:
  ```javascript
@@ -184,7 +187,9 @@ When javascript file of homeostatic is loaded after loading your page (Because `
  |:----------|:-----|:------------|
  |`nameOfFosterParent`| `string` | The name of the foster parent whose number is being searched.|
 
- Returns the index of the foster parent in the array stored in `homeostatic.fosterParents`.
+ Returns the index of the foster parent in the array stored in `homeostatic.fosterParents`. If no foster parent is found with the 
+ name passed as argument then returns `null`.
+ 
 
  Example:
  ```javascript
@@ -208,8 +213,8 @@ When javascript file of homeostatic is loaded after loading your page (Because `
    |`styleClass` | `string` | The name of class you mention in `data-h-manageStyle` |
    | `isWidthFixedByInlineStyle` |`string` | If width is set by inline `style` attribute, then it contains that value of width. Otherwise, value is `""` |
    |`isDisplayFixedByInlineStyle` | `string` |If display property is set by inline `style` attribute, then it contains that property value. Otherwise, value is `""` .
-   | `children` | `array` | A list of [child]() |
-   | `childOnLeave` | `array` | A list of [child]() which are now under custody of a foster parent.
+   | `children` | `array` | A list of [child](https://github.com/SaaminRahman/Homeostatic/edit/main/README.md#child) interface which are children of the real parent  |
+   | `childOnLeave` | `array` | A list of [child](https://github.com/SaaminRahman/Homeostatic/edit/main/README.md#child) which are now under custody of a foster parent.
 
 #### `child`
    
@@ -251,7 +256,7 @@ When javascript file of homeostatic is loaded after loading your page (Because `
    |`styleClass` | `string` | The name of class you mention in `data-h-manageStyle` |
    | `isWidthFixedByInlineStyle` |`string` | If width is set by inline `style` attribute, then it contains that value of width. Otherwise, value is `""` |
    |`isDisplayFixedByInlineStyle` | `string` |If display property is set by inline `style` attribute, then it contains that property value. Otherwise, value is `""` .
-   | `children` | `array` | A list of [child]() which are under the custody of the foster parent |
+   | `children` | `array` | A list of [child](https://github.com/SaaminRahman/Homeostatic/edit/main/README.md#child) which are under the custody of the foster parent |
   
   It also has a method named `getChildByName`
 
@@ -259,7 +264,8 @@ When javascript file of homeostatic is loaded after loading your page (Because `
   |:----------|:-----|:------------|
   |`nameOfChild`| `string` | The name of the child|
 
-  Returns the interface [child]() from the array stored in `children` property of a [fosterParent]() interface if the name passed as argument matches with the name of any [child]() interface. Otherwise returns `null`
+  Returns the interface [child]() from the array stored in `children` property of a [fosterParent]() interface if the name passed 
+  as argument matches with the name of any [child]() interface. Otherwise returns `null`
   
   Example:
   ```javascript
